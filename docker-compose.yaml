@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  licensingservice:
+    image: tomtomdocker2/licensing-service:0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=dev"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
